@@ -1,2 +1,2 @@
 # ProLog-SearchEngining
-A simple search enging implement by prolog
+A simple search engine implemented in Prolog
