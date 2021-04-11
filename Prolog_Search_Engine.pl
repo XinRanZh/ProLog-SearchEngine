@@ -1,9 +1,6 @@
 article(("Hello", "love sweet word", "I Love Julia Liao")).
 article(("meow", "word sweet", "Nice Job, Well Done")).
 
-
-
-
 fitTitle(Key, (Title, Keywords, Content)):- Key = Title.
 
 fitKeywordsDirect(Key, (Title, Keywords, Content)):- isSubString(Key, Keywords).
