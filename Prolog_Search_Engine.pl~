@@ -11,7 +11,7 @@ fitContentDirect(Key, (Title, Keywords, Content)):- isSubString(Key, Content).
 
 fitContentSplit(Key, (Title, Keywords, Content)):- checkSplit(Key, Content).
 
-search(Key, Articles):- distinct(search_mayDuplicate(Key, Articles)).
+asearch(Key, Articles):- distinct(search_mayDuplicate(Key, Articles)).
 
 add_article(X) :- assertz(article(X)).
 
