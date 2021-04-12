@@ -1,6 +1,9 @@
 :- include('googleapi.pl').
 :- include('Prolog_Search_Engine.pl').
 :- dynamic(article/1).
+
+
+
 start() :-
     write('Type search to use the search engine, or add to add an article to the knowledge base'),
     nl,
