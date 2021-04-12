@@ -1,6 +1,13 @@
 :- include('googleapi.pl').
 :- include('Prolog_Search_Engine.pl').
 :- dynamic(article/1).
+
+for_loop(0).
+for_loop(N) :- N > 0,
+    X is N - 1,
+    for_loop(X).
+
+
 start() :-
     write('Type search to use the search engine, or add to add an article to the knowledge base'),
     nl,

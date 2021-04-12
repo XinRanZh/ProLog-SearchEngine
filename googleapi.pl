@@ -6,7 +6,7 @@
 % A url that Contain Correct Api-Key and Search Engine Key
 google_url("https://customsearch.googleapis.com/customsearch/v1?key=AIzaSyBerH2Ssk2Z6Cn7savDLYGwb4dYBM_1c6A&cx=8dbbef1031a520106&q=").
 
-% Search Via Google Custon Search Engine
+% Search Via Google Custom Search Engine
 search(Keywords, Response):- google_url(X),
                              % First Convert every SPACE to +
                              re_replace(" ", "+", Keywords, ValidKeyWord),
@@ -18,5 +18,12 @@ search(Keywords, Response):- google_url(X),
                              atom_json_dict(Json, Dict, []),
                              % I only want the first result, which is the first one in the JSON.item
                              [Head|Tail] = Dict.items,
-                             % Then The Respose is it's Snippet
-                             Response = Head.htmlSnippet.
+                             % Then The Response is it's Snippet
+                             write('What number search result do you wish to display?'),
+                             read(N),
+                             nth1(N, Dict.items, E),
+                             re_replace("<b>", " ", E.htmlSnippet, NoTags),
+                             Response = NoTags.
+
+
+
