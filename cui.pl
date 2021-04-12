@@ -1,4 +1,3 @@
-:- include('googleapi.pl').
 :- include('Prolog_Search_Engine.pl').
 :- dynamic(article/1).
 
@@ -12,7 +11,7 @@ start() :-
         Choice == 'search' ->
         write('Type in your search query'),
         read(Input),
-        search(Input, Response),
+        search_k(Input, Response),
         write(Response)
         ;
         Choice == 'add' ->

@@ -7,7 +7,7 @@
 google_url("https://customsearch.googleapis.com/customsearch/v1?key=AIzaSyBerH2Ssk2Z6Cn7savDLYGwb4dYBM_1c6A&cx=8dbbef1031a520106&q=").
 
 % Search Via Google Custom Search Engine
-search(Keywords, Response):- google_url(X),
+search_g(Keywords, Response):- google_url(X),
                              % First Convert every SPACE to +
                              re_replace(" ", "+", Keywords, ValidKeyWord),
                              % Link a valid keyword to URL with API
